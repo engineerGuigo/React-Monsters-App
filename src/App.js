@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+
+import { CardList } from "./components/card-list/card-list.component";
+
 import "./App.css";
 
 class App extends Component {
@@ -7,20 +9,7 @@ class App extends Component {
     super();
 
     this.state = {
-      monsters: [
-        {
-          name: "Frankenstein",
-          id: "asc1",
-        },
-        {
-          name: "Dracula",
-          id: "asr2",
-        },
-        {
-          name: "Zombie",
-          id: "as1w",
-        },
-      ],
+      monsters: [],
     };
   }
 
@@ -33,9 +22,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.monsters.map((monster) => (
-          <h1 key={monster.id}> {monster.name} </h1>
-        ))}
+        <CardList name="Rodrigo">
+          {this.state.monsters.map((monster) => (
+            <h1 key={monster.id}> {monster.name} </h1>
+          ))}
+        </CardList>
       </div>
     );
   }
